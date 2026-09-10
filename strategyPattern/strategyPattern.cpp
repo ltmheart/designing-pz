@@ -65,3 +65,27 @@ public:
 
     virtual void display() = 0;
 };
+// конкретні персонажі
+class Cook : public Character {
+public:
+    Cook() { weaponStrategy = new PanStrategy(); }
+    void display() override { cout << "\n-- бойовий шеф-кухар (дуже лютий) --\n"; }
+};
+
+class Fairy : public Character {
+public:
+    Fairy() { weaponStrategy = new MagicWandStrategy(); }
+    void display() override { cout << "\n-- маленька фея (ростом 15 см) --\n"; }
+};
+
+class Elf : public Character {
+public:
+    Elf() { weaponStrategy = new BowStrategy(); }
+    void display() override { cout << "\n-- лісовий ельф --\n"; }
+};
+
+class Knight : public Character {
+public:
+    Knight() { weaponStrategy = new SwordStrategy(); }
+    void display() override { cout << "\n-- закований у броню лицар --\n"; }
+};
