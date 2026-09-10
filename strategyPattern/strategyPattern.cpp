@@ -89,3 +89,40 @@ public:
     Knight() { weaponStrategy = new SwordStrategy(); }
     void display() override { cout << "\n-- закований у броню лицар --\n"; }
 };
+int main() {
+    SetConsoleCP(65001);
+    SetConsoleOutputCP(65001);
+
+    // кухар переплутав зброю
+    Character* cook = new Cook();
+    cook->display();
+    cook->fight();
+
+    cout << "\n[кухар віджав у феї чарівну паличку, бо подумав, що це кулінарний вінчик]\n";
+    cook->setWeapon(new MagicWandStrategy());
+    cook->fight();
+
+    // фея
+    Character* fairy = new Fairy();
+    fairy->display();
+    fairy->fight();
+
+    cout << "\n[фея забрала в лицаря меч, але він заважкий, тому вона падає під його вагою]\n";
+    fairy->setWeapon(new SwordStrategy());
+    fairy->fight();
+
+    // лицар
+    Character* knight = new Knight();
+    knight->display();
+
+    cout << "\n[лицар викинув свій меч і забрав у кухаря сковорідку, бо вона завдає більше ушкоджень]\n";
+    knight->setWeapon(new PanStrategy());
+    knight->fight();
+
+    // очищ. пам'яті
+    delete cook;
+    delete fairy;
+    delete knight;
+
+    return 0;
+}
