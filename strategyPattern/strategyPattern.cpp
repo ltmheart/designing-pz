@@ -38,3 +38,30 @@ public:
         cout << "розмахує 50-кілограмовим мечем і випадково збиває люстру!\n";
     }
 };
+// контекст & абстрактний клас
+class Character {
+protected:
+    IWeaponStrategy* weaponStrategy = nullptr;
+
+public:
+    virtual ~Character() {
+        delete weaponStrategy;
+    }
+
+    void setWeapon(IWeaponStrategy* newWeapon) {
+        delete weaponStrategy;
+        weaponStrategy = newWeapon;
+        cout << "-> [ЗБРОЮ ЗМІНЕНО НА ЛЬОТУ!]\n";
+    }
+
+    void fight() {
+        if (weaponStrategy) {
+            weaponStrategy->useWeapon();
+        }
+        else {
+            cout << "стоїть і панічно махає руками...\n";
+        }
+    }
+
+    virtual void display() = 0;
+};
