@@ -3,14 +3,14 @@
 
 using namespace std;
 
-// інтерфейс стратегії
+// інтерфейс стратегії для зброї
 class IWeaponStrategy {
 public:
     virtual ~IWeaponStrategy() {}
-    virtual void useWeapon() = 0;
+    virtual void useWeapon() = 0; // метод використання зброї
 };
 
-// 4 класи зброі
+// конкретні стратегії (різні види зброї)
 class PanStrategy : public IWeaponStrategy {
 public:
     void useWeapon() override {
@@ -38,22 +38,25 @@ public:
         cout << "розмахує 50-кілограмовим мечем і випадково збиває люстру!\n";
     }
 };
-// контекст & абстрактний клас
+
+// контекст: базовий клас персонажа, який тримає стратегію
 class Character {
 protected:
-    IWeaponStrategy* weaponStrategy = nullptr;
+    IWeaponStrategy* weaponStrategy = nullptr; // поточна стратегія
 
 public:
     virtual ~Character() {
-        delete weaponStrategy;
+        delete weaponStrategy; // очищення пам'яті
     }
 
+    // зміна стратегії (зброї) на льоту
     void setWeapon(IWeaponStrategy* newWeapon) {
         delete weaponStrategy;
         weaponStrategy = newWeapon;
         cout << "-> [ЗБРОЮ ЗМІНЕНО НА ЛЬОТУ!]\n";
     }
 
+    // виклик методу поточної стратегії
     void fight() {
         if (weaponStrategy) {
             weaponStrategy->useWeapon();
@@ -65,7 +68,8 @@ public:
 
     virtual void display() = 0;
 };
-// конкретні персонажі
+
+// конкретні персонажі з початковою зброєю
 class Cook : public Character {
 public:
     Cook() { weaponStrategy = new PanStrategy(); }
@@ -89,11 +93,13 @@ public:
     Knight() { weaponStrategy = new SwordStrategy(); }
     void display() override { cout << "\n-- закований у броню лицар --\n"; }
 };
+
 int main() {
+    // консолічка
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
 
-    // кухар переплутав зброю
+    // створення персонажа кухаря та тестування зміни зброї
     Character* cook = new Cook();
     cook->display();
     cook->fight();
@@ -102,7 +108,7 @@ int main() {
     cook->setWeapon(new MagicWandStrategy());
     cook->fight();
 
-    // фея
+    // створення феї
     Character* fairy = new Fairy();
     fairy->display();
     fairy->fight();
@@ -111,7 +117,7 @@ int main() {
     fairy->setWeapon(new SwordStrategy());
     fairy->fight();
 
-    // лицар
+    // створення лицаря
     Character* knight = new Knight();
     knight->display();
 
@@ -119,7 +125,7 @@ int main() {
     knight->setWeapon(new PanStrategy());
     knight->fight();
 
-    // очищ. пам'яті
+    // очищення пам'яті
     delete cook;
     delete fairy;
     delete knight;
