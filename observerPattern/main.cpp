@@ -40,6 +40,27 @@ public:
         cout << "\nнові дані: " << temp << "°c\n";
         for (Observer* dev : devices) {
             dev->update(temp); // викликаємо update для кожного пристрою
+            // конкретний пристрій: кондиціонер
+class AC : public Observer {
+public:
+    // реакція кондиціонера на зміну температури
+    void update(int temp) override {
+        if (temp > 25) {
+            cout << "кондиціонер: жарко, вмикаю охолодження\n";
+        } else {
+            cout << "кондиціонер: нормальна температура\n";
+        }
+    }
+};
+
+// конкретний пристрій: дисплей
+class Display : public Observer {
+public:
+    // просто виводить поточну температуру на екран
+    void update(int temp) override {
+        cout << "дисплей: температура " << temp << "°c\n";
+    }
+};
         }
     }
 };
