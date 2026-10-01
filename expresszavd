@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+// стратегіджі
+class ITaxStrategy {
+public:
+    virtual ~ITaxStrategy() = default;
+    virtual double calculate(double amount) = 0;
+    virtual string name() = 0;
+};
+
+class StandardTaxStrategy : public ITaxStrategy {
+public:
+    double calculate(double a) override { return a * 1.18; }
+    string name() override { return "Standard tax (18%)"; }
+};
+
+class ITSectorTaxStrategy : public ITaxStrategy {
+public:
+    double calculate(double a) override { return a * 1.05; }
+    string name() override { return "IT sector tax (5%)"; }
+};
