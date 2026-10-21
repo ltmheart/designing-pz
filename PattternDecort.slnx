@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="PattternDecort/PattternDecort.vcxproj" Id="3870bb61-e7d2-4215-8f5d-c6e603c21992" />
+</Solution>

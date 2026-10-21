@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\Pizza.obj",
+            "outputs": [
+                "x64\\Debug\\Pizza.h_27D1B24BC0739847.ifc.dt.module.json",
+                "x64\\Debug\\Pizza.h_27D1B24BC0739847.ifc.dt.d.json",
+                "x64\\Debug\\Pizza.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "C:\\Users\\babyy\\source\\repos\\PattternDecort\\PattternDecort\\Pizza.h",
+                    "source-path": "c:\\users\\babyy\\source\\repos\\pattterndecort\\pattterndecort\\pizza.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}

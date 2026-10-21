@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\Pizza.h.obj",
+            "outputs": [
+                "C:\\Users\\babyy\\source\\repos\\PattternDecort\\PattternDecort\\x64\\Debug\\vc145.pdb",
+                "x64\\Debug\\",
+                "C:\\Users\\babyy\\source\\repos\\PattternDecort\\PattternDecort\\x64\\Debug\\Pizza.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "Pizza.h",
+                    "source-path": "c:\\users\\babyy\\source\\repos\\pattterndecort\\pattterndecort\\pizza.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
