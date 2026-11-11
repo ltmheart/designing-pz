@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MVCCinema/MVCCinema.vcxproj" Id="25c78c9d-2b3c-4c96-8e9e-c3ff149ef8d8" />
+</Solution>
