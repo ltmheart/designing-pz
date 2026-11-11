@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "C:\\Users\\babyy\\source\\repos\\CurrencyEasy_CPP\\build\\Currency.Service\\x64\\Debug\\Nbu.obj",
+            "outputs": [
+                "C:\\Users\\babyy\\source\\repos\\CurrencyEasy_CPP\\build\\Currency.Service\\x64\\Debug\\Nbu.h.obj.dt.module.json",
+                "C:\\Users\\babyy\\source\\repos\\CurrencyEasy_CPP\\build\\Currency.Service\\x64\\Debug\\Nbu.h.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
